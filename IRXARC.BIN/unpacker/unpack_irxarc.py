@@ -72,7 +72,7 @@ def dump_irxarc(data):
         arg_size = struct.unpack_from("<I", data, current + 0x04)[0]
 
         filename = read_cstring(data, current + 0x10, 0x30)
-        irxargs     = read_cstring(data, current + 0x40, 0x30)
+        irxargs = data[current + 0x40 : current + 0x40 + arg_size].decode("latin1") #read_cstring(data, current + 0x40, 0x30)
 
         elf_offset = current + ENTRY_HEADER_SIZE
 

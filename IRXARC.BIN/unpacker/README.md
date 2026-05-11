@@ -5,6 +5,19 @@ thanks to namco for leaving the following string on the binary, saving investiga
 deflate 1.2.1 Copyright 1995-2003 Jean-loup
 ```
 
+## usage
+```
+python unpack_irxarc.py INPUT UNSCRAMBLED UNPACKED
+```
+- `INPUT`: the location of the `IRXARC.BIN` file to process
+- `UNSCRAMBLED`: binary zlib file after being un-scrambled. not useful really, pass `-` here to avoid it's creation
+- `UNPACKED`: decompressed IRXARC file
+
+also, after unpacking, the contents of the IRXARC will be displayed, and a new folder called like the input file, but with `unc_` prefix, will be created
+holding the extracted files as well as all the necesary metadata from the archive un a JSON file `_manifest.json`
+
+## data and layout
+
 the file is scrambled and compressed.
 
 preliminar structure
